@@ -1,0 +1,174 @@
+<!doctype html>
+<html  lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{%block titulo%}
+
+			Sistema Principal
+			{%endblock%}
+		</title>
+		<link rel="stylesheet" type="text/css" href="/static/temp.css">
+
+		{%block head%}
+
+		{%endblock%}
+	</head>
+	<!--  background="../static/fondo/fondoplomo2.png" -->
+	<body >
+		<div class="segundofondo">
+					
+			{% if user.is_authenticated %}
+				<header>
+					<a href="/index/">
+						<div class="contenedor" id="uno" >
+						<img src="/static/iconos/icono1.png" class="icon">
+						<p class="texto">Inicio</p>
+					</a>
+					</div>
+					<div class="contenedor" id="dos">
+						<img src="/static/iconos/icono2.png" class="icon">
+						<p class="texto">Ventas</p>
+					</div>
+					<a href="/almacen/all">
+						<div class="contenedor" id="tres">
+							<img src="/static/iconos/icono3.png" class="icon">
+							<p class="texto">Categorias</p>
+						</div>
+					</a>
+					<div class="contenedor" id="cuatro">
+						<img src="/static/iconos/icono4.png" class="icon">
+						<p class="texto">Contacto</p>	
+					</div>
+					
+					<div class="contenedor" id="cinco">
+						<a href="/auth/logout">
+						<img src="/static/iconos/icono5.png" class="icon">
+						<p class="texto">cerrar</p></a>
+					</div>
+					
+					
+					<div class="contenedor" id="seis">
+						<img src="/static/iconos/icono6.png" class="icon">
+						<p class="texto">Informacion</p>
+					</div>
+				</header>
+			{% else %}
+				
+				<header>
+				<a href="/index/">
+					<div class="contenedor" id="uno" >
+					<img src="/static/iconos/icono1.png" class="icon">
+					<p class="texto">Inicio</p>
+				</a>
+				</div>
+				<div class="contenedor" id="dos">
+					<img src="/static/iconos/icono2.png" class="icon">
+					<p class="texto">Ventas</p>
+				</div>
+				<a href="/almacen/all">
+					<div class="contenedor" id="tres">
+						<img src="/static/iconos/icono3.png" class="icon">
+						<p class="texto">Categorias</p>
+					</div>
+				</a>
+				<div class="contenedor" id="cuatro">
+					<img src="/static/iconos/icono4.png" class="icon">
+					<p class="texto">Contacto</p>	
+				</div>
+				
+				<div class="contenedor" id="cinco">
+					<a href="/auth/login">
+					<img src="/static/iconos/icono5.png" class="icon">
+					<p class="texto">login</p></a>
+				</div>
+
+				<div class="contenedor" id="seis">
+					<a href="/auth/registro">
+					<img src="/static/iconos/icono6.png" class="icon">
+					<p class="texto">registrese</p>
+				</a></div>
+			</header>
+
+			{% endif %}
+					<div class="buscador">
+						<TEXTAREA COLS=50 ROWS=1 class="textbox">Busqueda personalizada</TEXTAREA>
+	                    
+	                    <a href="" class="buscadorboton">Buscar</a>
+					</div>
+					<table border="0" width="100%" id="tabladebase">
+                    	<tr>
+                            <td width="20%" valign="top" aling="top">
+                                <div id="menu">
+                                    <ul>
+                                        <li><a href="/almacen/add/producto/" class="enlace">agregar producto</a></li>
+										<li><a href="/almacen/add/Categoria/" class="enlace">agregar Categoria</a></li>
+										<li><a href="/cliente/registrocliente/" class="enlace">registrar Vendedor</a></li>
+                                   		<li><a href="/cliente/clienteregistrado/" class="enlace">Listado de Vendedores</a></li>
+										<li>Informes</li>
+										<li>Mas vendidos</li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td width="80%" align="center" valign="top">
+                                {%block contenido%}
+                                
+
+                                hoooooooooooooooooooooooooooooooooola
+                                {%endblock%}
+                            </td>
+                      </tr>
+					</table>
+
+<!--
+					<table height="300" border="3">
+						<td><tr></tr></td>
+					</table>
+					
+					<footer align="center">
+						<div class="cover">
+
+							<ul>
+							   <li>
+							      <img alt="Joomla" src="logo-joomla.jpg">
+							      <p>Joomla</p>
+							      <a class="boton" href="http://www.joomla.org" target="_blank">Visitar</a>
+							   </li>
+							   <li>
+							      <img alt="Blogger" src="logo-blogger.jpg">
+							      <p>Blogger</p>
+							      <a class="boton" href="http://www.blogger.com" target="_blank">Visitar</a>
+							   </li>
+							   <li>
+							      <img alt="Wordpress" src="logo-wordpress.jpg">
+							      <p>Wordpress</p>
+							      <a class="boton" href="http://es.wordpress.org" target="_blank">Visitar</a>
+							   </li>
+							   <li>
+							      <img alt="Drupal" src="logo-drupal.jpg">
+							      <p>Drupal</p>
+							      <a class="boton" href="https://drupal.org/‎" target="_blank">Visitar</a>
+							   </li>
+							   <li>
+							      <img width="100" height="100" alt="Vbulletin" src="logo-vbull.jpg">
+							      <p>Vbulletin</p>
+							      <a class="boton" href="http://www.vbulletin.com" target="_blank">Visitar</a>
+							   </li>
+							</ul>
+						</div>
+						<table>
+								<td>
+									<tr>
+										<font color="ffffff" size="1">Proyecto de seminario de Sistemas 2014</font>
+									</tr>
+								</td>
+						</table>
+
+					</footer>-->
+		</div>		
+	</body>
+</html>
+									
+
+
+									

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	<div id="formulario">
+		<form action="" method="post" id="form_reg_estudiante" enctype="multipart/form-data">
+			{% csrf_token%}
+
+			<!--{{form.as_ul}}-->
+
+			<table align="center" border="0">
+			<label><h1>Registro Producto</h1></label>
+			<tr>
+				<td>
+					<label>Nombre:</label>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.nombre}}
+					</div>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.nombre.errors}}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Cantidad:</label>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.cantidad}}
+					</div>
+				</td>
+				<td>
+					{{form.cantidad.errors}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Precio:</label>
+				</td>
+				<td>	
+					{{form.precio}}
+					</div>
+				</td>
+				<td>
+					{{form.precio.errors}}
+				</td>
+			</tr>
+				<td>
+					<label>Fecha:</label>
+				</td>
+				<td>
+					{{form.fecha}}
+				</td>
+				<td>
+					{{form.fecha.errors}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Categorias:</label>
+				</td>
+				<td>
+					{{form.cat}}
+				</td>
+				<td>
+					{{form.cat.errors}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Descripcion:</label>
+				</td>
+				<td>
+					{{form.descripcion}}
+				</td>
+				<td>
+					{{form.descripcion.errors}}
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<label>Status:</label>
+				</td>
+				<td>
+					{{form.status}}
+				</td>
+				<td>
+					{{form.status.errors}}
+				</td>
+			</tr>
+		
+
+			<tr aling="center">
+				<td aling="center" colspan="3">
+					<input type="submit" value="Grabar" >
+			<input type="reset" value="Limpiar">
+				</td>
+			</tr>
+		</table>
+		</form>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<!--<div id="formulario">
+		<form action="." method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+
+			<input type="submit" value="Guardar">
+			<input type="reset" value="Limpiar">
+		</form>
+	</div>-->
+<font color="ffffff">{{informacion}}</font>
+ {% endblock %}

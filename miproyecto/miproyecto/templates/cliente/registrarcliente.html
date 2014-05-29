@@ -1,0 +1,117 @@
+{% extends 'base2.html' %}
+
+{% block contenido %}
+	<div id="formulario">
+		<form action="" method="post" id="form_reg_estudiante">
+			{% csrf_token%}
+
+			<!--{{form.as_ul}}-->
+			<table align="center" border="0">
+			<label><h1>Registro cliente</h1></label>
+			<tr>
+				<td>
+					<label>Apellidos:</label>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.apellidos}}
+					</div>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.apellidos.errors}}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Nombres:</label>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.nombres}}
+					</div>
+				</td>
+				<td>
+					{{form.nombres.errors}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>CI:</label>
+				</td>
+				<td>	
+					{{form.ci}}
+					</div>
+				</td>
+				<td>
+					{{form.ci.errors}}
+				</td>
+			</tr>
+				<td>
+					<label>Direccion:</label>
+				</td>
+				<td>
+					{{form.direccion}}
+				</td>
+				<td>
+					{{form.direccion.errors}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>email:</label>
+				</td>
+				<td>
+					{{form.email}}
+				</td>
+				<td>
+					{{form.email.errors}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>usuario:</label>
+				</td>
+				<td>
+					{{form.usuario}}
+				</td>
+				<td>
+					{{form.usuario.errors}}
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<label>password1:</label>
+				</td>
+				<td>
+					{{form.password1}}
+				</td>
+				<td>
+					{{form.password1.errors}}
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<label>password2:</label>
+				</td>
+				<td>
+					{{form.password2}}
+				</td>
+				<td>
+					{{form.password2.errors}}
+				</td>
+			</tr>
+
+			<tr aling="center">
+				<td aling="center" colspan="3">
+					<input type="submit" value="Enviar" align="center" />
+				</td>
+			</tr>
+		</table>
+		</form>
+
+	</div>
+
+
+ {% endblock %}

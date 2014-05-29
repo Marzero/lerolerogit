@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% block contenido %}
+	<!--	<head>
+		<meta htttp-equiv="Content-Type" content="text/html; charset-utf.8">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	</head>
+	<div class="MenuCat">
+			<h1><td><tr>MENU DE CATEGORIAS</tr></td></h1>
+			{%for cat in cate%}
+				<td>
+					<td><a  class="btn btn-primary" href="/almacen/all/{{cat.id}}/" value="submit">{{cat.nombreCategoria}}</a></td>
+				</td>
+				<li>
+					<a href="/ventas/all/{{cat.id}}/">{{cat.nombreCategoria}}</a>
+				</li>
+			{%endfor%}
+		</div>
+		<ul class="MenuCat">
+		<table class="table table-hover">
+			<theader>
+				<tr>
+					<tr>Categoria</tr>
+				</tr>
+			</theader>
+		</table>
+	</ul>
+	<div>
+		<ul class="item_lista">
+			<tr ></tr>
+			<table class="table table-bordered table-hover" >
+				<theader>
+					<tr>
+						<td>Producto</td>
+						<td>Precio</td>
+						<td>Cantidad</td>
+						<td>Descripcion</td>
+						<td>Categoria</td>
+					</tr>
+				</theader>
+
+			{%for item in lista %}
+				<tbody>
+					<tr class="success">
+						<td>{{item.nombre}}</td>
+						<td>$ {{item.precio}}</td>
+						<td>{{item.cantidad}}</td>
+						<td>{{item.descripcion}}</td>
+						<td>{%for categoria in item.cat.all%}
+										<td>{{categoria.nombreCategoria}}</td>
+										<td><a href="/almacen/all/{{item.id}}/{{categoria.id}}/" class="btn btn-primary">Elimibar categoria</a>
+						{%endfor%}</td>
+						<td><a type="submit" class="btn btn-primary" href="/producto/{{item.id}}/" value="submit"><span class="glyphicon glyphicon-search"></span>Ver</a></td>
+						<td><a type="submit" class="btn btn-primary" href="/producto/{{item.id}}" value="submit"><span class="glyphicon glyphicon-search"></span>Comprar</a></td>
+					</tr>
+				</tbody>
+			{%endfor%}
+			</table>
+		</ul>
+	</div>
+
+	<div>
+		<ul class="MenuCat">
+			{%for cat in cate%}
+				<li>
+					<a href="/ventas/all/{{cat.id}}/">{{cat.nombreCategoria}}</a>
+				</li>
+			{%endfor%}
+		</ul>
+		<ul class="item_lista">
+			{%for item in lista %}
+			<li class="principal">
+				<div>
+					<h1>{{item.nombre}}</H1>
+					<div class="numero"># Item {{item.id}}</div>
+					<div>
+						<ul id="detalle">
+							<li class="subprincipal">
+								<div>
+									<b>Cantidad: </b>{{item.cantidad}}
+								</div>
+								<div>
+										<b>Fecha: </b>{{item.fecha}}	
+								</div>
+							</li>
+							<li class="subprincipal">
+								<div>Precio:</div>
+								<div>{{item.precio}}</div>
+							</li>
+							<li class="subprincipal">
+								<b>Categorias:</b>
+								<ul>
+									{%for categoria in item.cat.all %}
+										<li>
+											{{categoria.nombreCategoria}}
+											<a href="/ventas/all/{{item.id}}/{{categoria.id}}/">Eliminar categoria</a>
+										</li>
+									{%endfor%}
+								</ul>
+							</li>
+						</ul>
+					</div>	
+				</div>
+			</li>
+			{%endfor%}
+		</ul>
+	</div>-->
+	<div>
+		<ul class="MenuCat">
+			{%for cat in cate%}
+				<li>
+					<a href="/ventas/all/{{cat.id}}/">{{cat.nombreCategoria}}</a>
+				</li>
+			{%endfor%}
+		</ul>
+
+		<table class="tablamuestra">
+				<tr id="thead">
+					<th>Producto</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Descripcion</th>
+					<th>Categoria</th>
+				</tr>
+			{%for item in lista %}
+					<tr>
+						<td>{{item.nombre}}</td>
+						<td>{{item.precio}}</td>
+						<td>{{item.cantidad}}</td>
+						<td>{{item.descripcion}}</td>
+						{%for categoria in item.cat.all%}
+							<td>{{categoria.nombreCategoria}}</td>
+							<td><a href="/almacen/all/{{item.id}}/{{categoria.id}}/">Elimibar categoria</a>
+						{%endfor%}
+						<td><a type="submit" href="/producto/{{item.id}}/" value="submit">Ver</a></td>
+						<td><a type="submit" href="/producto/{{item.id}}/" value="submit">Comprar</a></td>
+					</tr>
+			{%endfor%}
+		</table>
+	</div>
+
+
+
+
+{% endblock contenido%}

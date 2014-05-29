@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div id="formulario">
+		<form action="" method="post" id="form_reg_estudiante">
+			{% csrf_token%}
+
+			<!--{{form.as_ul}}
+	nombreCategoria=models.CharField(max_length=200)
+	fecha=models.DateField()
+		-->
+
+			<table align="center" border="0">
+			<label><h1>Registro Producto</h1></label>
+			<tr>
+				<td>
+					<label>nombreCategoria:</label>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.nombreCategoria}}
+					</div>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.nombreCategoria.errors}}
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>fecha:</label>
+				</td>
+				<td>
+					<div class="cuadros">
+					{{form.fecha}}
+					</div>
+				</td>
+				<td>
+					{{form.fecha.errors}}
+				</td>
+			</tr>
+			
+			<tr aling="center">
+				<td aling="center" colspan="3">
+					<input type="submit" value="Guardar" >
+			<input type="reset" value="Limpiar">
+				</td>
+			</tr>
+		</table>
+		</form>
+
+	</div>
+
+
+<!--	<form action="." method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Grabar">
+		<input type="reset" value="Limpiar">
+	</form>
+-->
+	<font color="000000">{{informacion}}</font>
+ {% endblock %}
